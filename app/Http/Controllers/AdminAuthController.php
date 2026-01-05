@@ -3,21 +3,58 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use App\Models\Admin;
+use Illuminate\Support\Facades\Log;
 
 class AdminAuthController extends Controller
 {
     public function login(Request $request)
     {
-        $admin = Admin::first();
+        // Log untuk debug
+        Log::info('Login attempt', [
+            'password_received' => $request->password ? 'yes' : 'no',
+            'ip' => $request->ip(),
+        ]);
 
-        if (!$admin || !Hash::check($request->password, $admin->password)) {
-            return back()->withErrors(['password' => 'Password salah']);
+        // Validasi input
+        $request->validate([
+            'password' => 'required'
+        ]);
+
+        // Password dari env atau hardcoded
+        $correctPassword = env('ADMIN_PASSWORD', 'admin123');
+
+        Log::info('Password check', [
+            'match' => $request->password === $correctPassword
+        ]);
+
+        if ($request->password === $correctPassword) {
+            // Set session
+            session([
+                'admin_logged_in' => true,
+                'login_time' => now(),
+            ]);
+
+            // Save session explicitly
+            session()->save();
+
+            Log::info('Login successful', [
+                'session_id' => session()->getId(),
+                'session_data' => session()->all()
+            ]);
+
+            return redirect()->route('admin.dashboard');
         }
 
-        session(['admin_logged_in' => true]);
+        Log::warning('Login failed - wrong password');
 
-        return redirect()->route('admin.dashboard');
+        return back()->with('error', 'Password salah!')->withInput();
+    }
+
+    public function logout()
+    {
+        session()->forget('admin_logged_in');
+        session()->save();
+        
+        return redirect()->route('login')->with('success', 'Berhasil logout');
     }
 }
