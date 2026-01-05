@@ -5,6 +5,7 @@
     <title>PAUD Cendrawasi</title>
    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
    <link rel="stylesheet" href="{{ asset('css/hero.css') }}">
+   <link rel="stylesheet" href="https://paud-cendrawasih-production.up.railway.app/css/main.css">
 </head>
 <body>
 
