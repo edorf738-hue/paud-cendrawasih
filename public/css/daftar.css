@@ -1,0 +1,187 @@
+/* PETUNJUK PENGISIAN */
+.petunjuk-box {
+    background: #9e9dc5;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    color: #1f00CC;
+    font-size: 14px;
+}
+
+.petunjuk-box strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #1f00CC;
+}
+
+.petunjuk-box ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.petunjuk-box li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.petunjuk-box .wajib {
+    color: #1f00CC;
+    font-weight: bold;
+}
+
+.wajib {
+    color: #ff0000;
+}
+
+.form-wrapper {
+    max-width: 900px;
+    background: #fff;
+    margin: 60px auto;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.teks {
+    color: #3b35f1;
+    font-size: 20px;
+    font-weight: 590;
+}
+
+.teks small {
+    color: #3b35f1;
+    font-size: 15px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.step.active {
+    color: #3b35f1;
+    font-weight: bold;
+}
+
+
+.form-box h3 {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.form-grid input,
+.form-grid select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* FIELD LABEL */
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.field label {
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+textarea {
+    resize: none;
+    min-height: 120px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.tekss {
+    text-align: justify;
+    padding: 20px;
+}
+
+/* UKURAN FIELD */
+.field.full {
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    .field.full {
+        grid-column: span 1;
+    }
+}
+
+
+.form-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+
+.finish-step {
+    text-align: center;
+    padding: 50px;
+}
+
+.finish-card {
+    padding: 48px 24px 64px;
+    color: #555;
+    display:grid;
+}
+
+.finish-icon {
+    width: 70px;
+    height: 70px;
+    background: #3b35f1;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    padding: 50px;
+}
+
+.finish-step.active ~ .form-controls {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-wrapper {
+        padding: 30px;
+        margin: 30px 15px;
+    }
+}

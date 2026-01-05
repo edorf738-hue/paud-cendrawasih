@@ -1,0 +1,53 @@
+/* Wrapper halaman sukses */
+.form-wrapper {
+    max-width: 900px;
+    background: #fff;
+    margin: 60px auto;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+/* Card sukses */
+.finish-card {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 40px;
+    color: #555;
+}
+
+/* Icon centang */
+.finish-icon {
+    width: 100px;
+    height: 100px;
+    background: #4F46E5;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+}
+
+/* Paragraf */
+.finish-card .tekss {
+    text-align: justify;
+    margin-top: 20px;
+}
+
+/* Tombol kembali */
+.finish-card .btn.primary {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: #4F46E5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.finish-card .btn.primary:hover {
+    background: #4338CA;
+}

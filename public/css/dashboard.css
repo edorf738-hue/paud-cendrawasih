@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f6fb;
+  color: #333;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #cfd3e6;
+  padding: 16px 32px;
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: 18px;
+  color: #1f3cff;
+}
+
+.admin-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.back {
+  font-size: 20px;
+  text-decoration: none;
+  color: #1f3cff;
+}
+
+.admin-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.search-box {
+  background: #e0e0e0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  margin-bottom: 30px;
+  gap: 12px;
+  position: relative;
+}
+
+.search-icon {
+  font-size: 18px;
+  color: #666;
+  flex-shrink: 0; /* Ikon tidak mengecil */
+}
+
+.search-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.search-btn:active {
+  transform: scale(0.95);
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+  padding-right: 30px;
+}
+
+.search-box input::placeholder {
+  color: #999;
+}
+
+.search-box .icon {
+  font-size: 18px;
+}
+
+.table-wrapper {
+  background: #e0e0e0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* CLEAR BUTTON - TAMBAHAN BARU */
+.clear-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin: 0;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  line-height: 1;
+  border-radius: 4px;
+}
+
+.clear-btn:hover {
+  color: #333;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.clear-btn:active {
+  transform: scale(0.9);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #d1d1d1;
+}
+
+th {
+  text-align: left;
+  padding: 14px;
+  font-size: 14px;
+  color: #777;
+  font-weight: 600; /*tambahan*/
+}
+
+td {
+  padding: 14px;
+  border-top: 1px solid #c7c7c7;
+  font-size: 14px;
+}
+
+tbody tr {
+  background: #e0e0e0;
+}
+
+tbody tr:hover {
+  background: #d8d8d8;
+}
+
+/* Row yang hidden saat search */
+tbody tr.hidden {
+  display: none;
+}
+
+.verify-btn {
+  background: #1f3cff;
+  border: none;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.verify-btn:hover {
+  background: #162dcc;
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 20px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+}
